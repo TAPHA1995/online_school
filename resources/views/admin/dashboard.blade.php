@@ -1,7 +1,7 @@
 @extends('layout.master')
 
 @section('Titre')
- Dashboard | funda of web IT
+
 @ensection
 
 @section('content')

@@ -1,12 +1,16 @@
 @extends('layout.master')
 
 @section('Titre')
- Dashboard | funda of web IT
 @ensection
 
 @section('content')
    <br><br>
    <p>Liste des aprenants</p>
+           @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 <table class="table table-striped">
                     <tr>
                         <th>Photo</th>
