@@ -1,15 +1,22 @@
-@extends('layouts.app')
+
+@extends('layout.master')
+
+
 
 @section('content')
-<br><br><br>
+
+
+
+<div class="ajouter">
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">Ajouter un Professeur</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="ajouterAprenant">
                         @csrf
 
                         <div class="form-group row">
@@ -68,7 +75,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
+                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('Téléphone') }}</label>
 
                             <div class="col-md-6">
                                 <input id="telephone" type="text" class="form-control @error('telephone') is-invalid @enderror" name="telephone" value="{{ old('telephone') }}" required autocomplete="telephone" autofocus>
@@ -93,7 +100,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
@@ -115,12 +122,12 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Ajouter') }}
                                 </button>
+                                <a href="/role_apprenant" class="btn btn-danger">Retour</a>
                             </div>
                         </div>
                     </form>
@@ -129,4 +136,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+
 @endsection

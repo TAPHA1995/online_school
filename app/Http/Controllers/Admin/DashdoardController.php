@@ -29,4 +29,18 @@ class DashdoardController extends Controller
         $users->update();
         return redirect('role_apprenant')->with('status','L\'aprenant a étè bien modifier !');
     }
+
+
+
+    public function registerdelete($id){
+        $users = User::findOrFail($id);
+        $users->delete();
+
+        return redirect('/role_apprenant')->with('status','L\'aprenant a étè bien supprimer !');
+    }
+     
+
+
+
+    
 }
