@@ -40,7 +40,7 @@
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="/dashboard">
+            <a href="">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -78,25 +78,25 @@
         </ul>
       </div>
     </div>
-    <div class="main-panel" id="main-panel">
+    <!-- <div class="main-panel" id="main-panel"> -->
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
+              <button type="button" class="navbar navbar-toggler bg-primary">
                 <span class="navbar-toggler-bar bar1"></span>
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
-            </div>
+            <!-- </div>
             <a class="navbar-brand" href="#pablo"></a>
-          </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          </div> -->
+          <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
+          </button> -->
         </div>
       </nav>
 <br><br><br>
@@ -105,15 +105,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                   
                 </div>
             </div>
         </div>

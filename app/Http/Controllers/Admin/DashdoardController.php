@@ -17,6 +17,11 @@ class DashdoardController extends Controller
         $users = user::findOrFail($id);
         return view('admin.aprenants_edit')->with('users', $users);
     }
+    public function aprenants_editshow(Request $request, $id)
+    {
+        $users = user::findOrFail($id);
+        return view('admin.aprenants_edit')->with('users', $users);
+    }
     public function registersupdate( Request $request, $id)
     {
         $users = User::find($id);
@@ -27,7 +32,7 @@ class DashdoardController extends Controller
         $users->telephone = $request->input('telephone');
         $users->formation = $request->input('formation');
         $users->update();
-        return redirect('role_apprenant')->with('status','L\'aprenant a étè bien modifier !');
+        return redirect('/role_apprenant')->with('status',' Modification réussite !');
     }
 
 

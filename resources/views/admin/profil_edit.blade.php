@@ -74,7 +74,7 @@
         </ul>
       </div>
     </div>
-    <br><br><br>
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -82,7 +82,7 @@
                 <div class="card-header">Editer Un aprenant</div>
 
                 <div class="card-body">
-                    <form method="POST" action="/role_register_update/{{ $users->id }}">
+                    <form method="POST" action="/role_register_updateB/{{ $users->id }}">
                     {{  csrf_field() }}
                     {{  method_field('PUT') }}
 
@@ -148,3 +148,5 @@
         </div>
     </div>
 </div>
+
+

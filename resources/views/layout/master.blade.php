@@ -38,8 +38,7 @@
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange"><!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
+    <div class="sidebar" data-color="orange">
       <div class="logo">
         <a href="/home" class="simple-text logo-mini">
         
@@ -80,7 +79,7 @@
               <p>Aprenants</p>
             </a>
           </li>
-          <li class="active ">
+         
             
           </li>
           <li>
@@ -170,7 +169,6 @@
       <div class="content">
 
       @yield('content')
-
 
 
   <!--   Core JS Files   -->

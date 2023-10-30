@@ -16,23 +16,14 @@ Route::get('/', function () {
 });
 
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::group(['middleware' => ['auth','admin']], function(){
-
-    Route::get('/dashboard', function () {
+ Auth::routes();
+ Route::get('/home', 'HomeController@index')->name('home');
+ Route::get('/dashboard', function () {
         return view('admin.dashboard');
     });
-
-    Route::get('/role_apprenant', 'Admin\DashdoardController@lesaprenants');
-     Route::get('/role_edit/{id}', 'Admin\DashdoardController@aprenantsedit');
-    //  Route::get('/ajouterAprenant','Admin\DashdoardController@ajouterLesaprenant');
-     Route::put('/role_register_update/{id}', 'Admin\DashdoardController@registersupdate');
+     Route::group(['middleware' => ['auth','admin']], function(){
+     Route::get('/role_apprenant', 'Admin\DashdoardController@lesaprenants');
      Route::delete('/role_delete/{id}', 'Admin\DashdoardController@registerdelete');
-
-
      Route::get('/ajouterAprenant', function(){
         return view('admin.ajouterAprenant');
     });
@@ -51,7 +42,15 @@ Route::group(['middleware' => ['auth','admin']], function(){
        return redirect('/role_apprenant')->with('status', 'L\'aprenant a étè bien ajouter !');
     });
    
+  
 });
+Route::get('/role_edit/{id}', 'Admin\DashdoardController@aprenantsedit');
+Route::put('/role_register_update/{id}', 'Admin\DashdoardController@registersupdate');
+Route::get('/aprenants_edit','Admin\DashdoardController@aprenants_editshow');
+Route::get('/profil_edit', function(){
+    return view('admin.profil_edit');
+});
+
 
 
 

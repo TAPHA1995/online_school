@@ -169,7 +169,7 @@
                 display:flex;
                 justify-content:left;
                 font-size:20px;
-                margin-right:500px;
+                margin-right:400px;
                 gap:50px;
 
             }

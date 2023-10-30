@@ -22,7 +22,7 @@ class AdminMiddleware
         {
             return $next($request);
         }else {
-            return redirect('/home')->with('status', 'Vous étes pas autorisé sur cette page');
+            return redirect('/home');
         }
        
     }

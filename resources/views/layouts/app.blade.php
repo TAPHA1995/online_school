@@ -65,11 +65,7 @@
                     </li>
                 </div>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+            
                    <ul class="navbar-nav mr-auto">
 
                    </ul>
@@ -91,7 +87,7 @@
                                     justify-content:right;
                                     flex-direction:column;
                                     font-size:20px;
-                                    margin-left:20px;
+                                    margin-right:10px;
                                  }
                                 </style>
                            @endif
@@ -106,7 +102,10 @@
                                     <i class="now-ui-icons users_single-02"></i>
                                     </a>
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                        <a class="btn btn-info dropdown-item " href="/role_edit/{{ Auth::user()->id}}">
+                                                    {{ __('Settign profile') }}
+                                                </a>
+                                                <a class="btn btn-info dropdown-item " href="{{ route('logout') }}"
                                                     onclick="event.preventDefault();
                                                                   document.getElementById('logout-form').submit();">
                                                     {{ __('Logout') }}
@@ -123,7 +122,7 @@
                                                     display:flex;
                                                     justify-content:left;
                                                     font-size:20px;
-                                                    margin-left:120px;
+                                                    margin-left:10px;
                                                 }
                                            
                                         </style> 
@@ -138,7 +137,9 @@
       </nav>
 
         <main class="py-4">
+        
             @yield('content')
+      
             
         </main>
     </div>
