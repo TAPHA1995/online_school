@@ -84,7 +84,13 @@
                             <label for="formation" class="col-md-4 col-form-label text-md-right">{{ __('Formation') }}</label>
 
                             <div class="col-md-6">
-                                <input id="formation" type="text" class="form-control @error('filiere') is-invalid @enderror" name="formation" value="{{ old('filiere') }}" required autocomplete="formation" autofocus>
+                                <select name="formation" id="">
+                                    <option value="Développement web fullstack">Développement web fullstack</option>
+                                    <option value="Développement web frontend">Développement web frontend</option>
+                                    <option value="Développement web backend">Développement web backend</option>
+                                    <option value="Développement mobile">Développement mobile</option>
+                                </select>
+                                <!-- <input id="formation" type="text" class="form-control @error('filiere') is-invalid @enderror" name="formation" value="{{ old('filiere') }}" required autocomplete="formation" autofocus> -->
 
                                 @error('formation')
                                     <span class="invalid-feedback" role="alert">

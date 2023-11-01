@@ -18,12 +18,12 @@ class AdminMiddleware
     public function handle($request, Closure $next)
 
     {
-        if(Auth::user()->userType == 'admin' ) 
+        if(Auth::user()->userType == 'admin') 
         {
             return $next($request);
-        }else {
+        }elseif(Auth::user()->formation == 'Développement web backend')
+        {
             return redirect('/home');
-        }
-       
+        }  
     }
 }

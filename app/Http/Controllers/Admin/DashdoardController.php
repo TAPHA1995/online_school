@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+
 
 class DashdoardController extends Controller
 {
@@ -32,7 +34,7 @@ class DashdoardController extends Controller
         $users->telephone = $request->input('telephone');
         $users->formation = $request->input('formation');
         $users->update();
-        return redirect('/role_apprenant')->with('status',' Modification réussite !');
+        return back()->with('messageA',' Modification réussite !');
     }
 
 
@@ -41,11 +43,38 @@ class DashdoardController extends Controller
         $users = User::findOrFail($id);
         $users->delete();
 
-        return redirect('/role_apprenant')->with('status','L\'aprenant a étè bien supprimer !');
+        return back()->with('message','L\'aprenant a étè bien supprimer !');
     }
      
+    
+    public function  registerschangePassword(Request $request){
+       $request->validate([
+        'ancienmotPasse' => 'required',
+        'nouveaumotPasse' => 'required',
+       ]);
+     
+
+       if(!Hash::check($request->ancienmotPasse, auth()->user()->password))
+        {
+          return back()->with('messageB','L\'ancien mot de passe ne correspond pas');
+        }
+        // dd($request->all());
 
 
+        User::whereId(auth()->user()->id)->update([
+            'password' => Hash::make($request->nouveaumotPasse)
+        ]);
+
+        return back()->with('messageC','L\'ancien mot de passe a étè bien changé !');
+    }
+
+// affichage de page des formation pour Développement web fullstack
+    public function role_devwebfullshow()
+    {
+        return view('admin.role_devwebfull');
+    }
+   
+   
 
     
 }

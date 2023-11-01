@@ -1,18 +1,16 @@
 <!-- @extends('layouts.app') -->
-
 <!-- @section('content') -->
-
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <meta charset="UTF-8">
+  <title>Les formation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com"> 
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/css/style.css">
+
+<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="../assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-  @yield('Titre')
-  </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
@@ -22,25 +20,26 @@
   <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
-</head>
 
-<body class="">
-  
-  <div class="wrapper ">
+</head>
+<body>
+
+ 
+<div class="wrapper ">
     <div class="sidebar" data-color="orange"><!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
       <div class="logo">
         <a href="" class="simple-text logo-mini">
         
         </a>
-        <a href="home" class="simple-text logo-normal">
+        <a href="/home" class="simple-text logo-normal">
           G-SCHOOL
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="">
+            <a href="/home">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -48,7 +47,7 @@
           <li>
             <a href="./icons.html">
               <i class="now-ui-icons education_atom"></i>
-              <p>Formation</p>
+              <p>Mes Formations</p>
             </a>
           </li>
           <li>
@@ -66,7 +65,7 @@
           <li>
             <a href="/role_devwebfull">
               <i class="now-ui-icons education_atom"></i>
-              <p>Mes Formations</p>
+              <p>Formations</p>
             </a>
           </li>
           <li>
@@ -80,9 +79,9 @@
         </ul>
       </div>
     </div>
-    <!-- <div class="main-panel" id="main-panel"> -->
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+  
+<!-- partial:index.partial.html -->
+<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
@@ -101,22 +100,6 @@
           </button> -->
         </div>
       </nav>
-<br><br><br>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                   
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+      @endsection
+</body>
+</html>

@@ -22,21 +22,20 @@
 </head>
 <body>
     <div id="app">
-
+   
     <nav class="navbar navbar-expand-lg   bg-primary  navbar-absolute ">
         <div class="container-fluid">
-    
+        
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-bar bar1"></span>
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
           </button>
+          <a href="home">G-SCHOOL</a>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
           
             <ul class="navbar-nav">
-                <li class="home">
-                    <a href="/home">G-SCHOOL</a>
-                </li>
+               
                 <style>
                     .home{
                         font-size:20px;

@@ -31,9 +31,11 @@ class LoginController extends Controller
     {
     if(Auth::user()->userType == 'admin') 
     {
-        return 'dashboard';
-    }else {
-        return 'home';
+        return 'dashboard'; 
+       
+    }elseif(Auth::user()->formation == 'Développement web backend')
+     {
+        return '/home';
     }
   }
     /**

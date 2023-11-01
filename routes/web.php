@@ -50,6 +50,11 @@ Route::get('/aprenants_edit','Admin\DashdoardController@aprenants_editshow');
 Route::get('/profil_edit', function(){
     return view('admin.profil_edit');
 });
+Route::post('/role_register_changePassword/{id}', 'Admin\DashdoardController@registerschangePassword');
+
+// affichage de page des formation pour Développement web fullstack
+Route::get('/role_devwebfull', 'Admin\DashdoardController@role_devwebfullshow');
+
 
 
 

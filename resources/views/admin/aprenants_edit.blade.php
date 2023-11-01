@@ -22,71 +22,23 @@
 
 <body class="">
   
-  <div class="wrapper ">
-    <div class="sidebar" data-color="orange"><!--
-        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
-      <div class="logo">
-        <a href="" class="simple-text logo-mini">
-        
-        </a>
-        <a href="home" class="simple-text logo-normal">
-          G-SCHOOL
-        </a>
-      </div>
-      <div class="sidebar-wrapper" id="sidebar-wrapper">
-        <ul class="nav">
-          <li>
-            <a href="/home">
-              <i class="now-ui-icons design_app"></i>
-              <p>Dashboard</p>
-            </a>
-          </li>
-          <li>
-            <a href="./icons.html">
-              <i class="now-ui-icons education_atom"></i>
-              <p>Formation</p>
-            </a>
-          </li>
-          <li>
-            <a href="./map.html">
-              <i class="now-ui-icons location_map-big"></i>
-              <p>Emploi du temps</p>
-            </a>
-          </li>
-          <li>
-            <a href="./notifications.html">
-              <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-         
-          <li class="active ">
-           
-          </li>
-          <li>
-            
-          </li>
-          <li class="active-pro">
-            
-              <p></p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
+
     <br><br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Editer Un aprenant</div>
+                <div class="card-header">Editez le profil</div>
 
                 <div class="card-body">
+                @if(session()->has('messageA'))
+                <div class="alert alert-success" role="alert">
+                     {{session()->get('messageA')}}
+                </div>
+                @endif
                     <form method="POST" action="/role_register_update/{{ $users->id }}">
                     {{  csrf_field() }}
                     {{  method_field('PUT') }}
-
-                    
 
                         <div class="form-group row">
                             <label for="photo" class="col-md-4 col-form-label text-md-right">Photo</label>
@@ -137,6 +89,80 @@
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                    Editer
+                                </button>
+                                <a href="/role_apprenant" type="" class="btn btn-danger">
+                                   Annuler</a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ __('Changez le mot de passe') }}</div>
+
+                <div class="card-body"> 
+
+                @if(session()->has('messageB'))
+                <div class="alert alert-danger" role="alert">
+                     {{session()->get('messageB')}}
+                </div>
+                @endif  
+
+                @if(session()->has('messageC'))
+                <div class="alert alert-success" role="alert">
+                     {{session()->get('messageC')}}
+                </div>
+                @endif  
+                    <form method="POST" action="/role_register_changePassword/{{$users->id}}">
+                        @csrf
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Ancien Mot de Passe') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="ancienmotPasse" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Nouveau Mot de Passe') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="nouveaumotPasse" required autocomplete="new-password">
+
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmez le Mot de Passe') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    {{ __('Register') }}
                                 </button>
                                 <a href="/role_apprenant" type="" class="btn btn-danger">
                                    Annuler</a>
