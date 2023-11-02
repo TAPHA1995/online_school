@@ -40,10 +40,10 @@
   <div class="wrapper ">
     <div class="sidebar" data-color="orange">
       <div class="logo">
-        <a href="/home" class="simple-text logo-mini">
+        <a href="/dashboard" class="simple-text logo-mini">
         
         </a>
-        <a href="/home" class="simple-text logo-normal">
+        <a href="/dashboard" class="simple-text logo-normal">
           G-SCHOOL
         </a>
       </div>
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li>
-            <a href="./icons.html">
+            <a href="/role_devwebfull">
               <i class="now-ui-icons education_atom"></i>
               <p>Formation</p>
             </a>
@@ -149,26 +149,30 @@
                                 </div>
                             </li>
 
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a class="nav-link" href="#pablo">
                   <i class="now-ui-icons users_single-02"></i>
                   <p>
-                    <span class="d-lg-none d-md-block">Account</span>
+                    <span class="d-lg-none d-md-block"></span>
                   </p>
                 </a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
       </nav>
       <!-- End Navbar -->
 
+     
 
+    
       <div class="panel-header panel-header-sm">
+  
       </div>
       <div class="content">
-
       @yield('content')
+     
+      
 
 
   <!--   Core JS Files   -->

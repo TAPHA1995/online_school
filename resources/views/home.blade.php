@@ -64,7 +64,7 @@
             </a>
           </li>
           <li>
-            <a href="/role_devwebfull">
+            <a href="/role_devwebfullapprenant">
               <i class="now-ui-icons education_atom"></i>
               <p>Mes Formations</p>
             </a>
@@ -119,4 +119,8 @@
         </div>
     </div>
 </div>
+
 @endsection
+<!-- <div class="panel-header panel-header-sm">
+      </div>
+      <div class="content"> -->
