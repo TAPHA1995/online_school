@@ -29,25 +29,24 @@
 @foreach($formation_devfullphps as $row)
     <div class="module1 srcoll-bar ">
         <div class="titrevideo">
-             <p class="text-light">{{$row->titre}}</p>
+             <p class="text">{{$row->titre}}</p>
         </div>
        
         <div class="textconsign">
-             <p class="text-light">{{$row->consigne}} </p>
+             <p class="text">{{$row->consigne}} </p>
         </div>
         <div class="video">
-            <video controls width="545" height="300" >
-            <source src="/upload/{{$row->video}}" type="">
-            </video>
+         <iframe width="540" height="315" src="{{$row->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+        </iframe> 
         </div>
         <div class="validationcours">
             <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark">Valider le cours</a>
             <a href="" class="btn btn-success text-light">Non validé</a>
         </div>
         <div class="testvalidation">
-            <p class="text-light">{{$row->sujetvm}}</p>
+            <p class="text">{{$row->sujetvm}}</p>
             <a href="{{$row->lienvm}}" class="" style="color:red; font-size:30px;">Lien</a><br>
-            <img src="images/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
+            <img src="imagesepreuve/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
         </div>
         <div clss="envoiteste">
             <span>
@@ -76,7 +75,7 @@ width:100%;
 overflow-y: scroll;
 flex-wrap:wrap;
 gap:100px;
-/* background-color:#6610f2; */
+
 
 }
 .module1{

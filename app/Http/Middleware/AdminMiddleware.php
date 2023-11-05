@@ -21,9 +21,9 @@ class AdminMiddleware
         if(Auth::user()->userType == 'admin') 
         {
             return $next($request);
-        }elseif(Auth::user()->formation == 'Développement web backend')
+        }else
         {
-            return redirect('/home');
+            return redirect('/homeDeveloppement_web_frontend_PHP') ;
         }  
     }
 }

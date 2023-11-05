@@ -85,9 +85,9 @@
 
                             <div class="col-md-6">
                                 <select name="formation" id="">
-                                    <option value="Développement web fullstack">Développement web fullstack</option>
-                                    <option value="Développement web frontend">Développement web frontend</option>
-                                    <option value="Développement web backend">Développement web backend</option>
+                                    <option value="Développement web fullstack PHP">Développement web fullstack PHP</option>
+                                    <option value="Développement web frontend PHP">Développement web frontend PHP</option>
+                                    <option value="Développement web backend PHP">Développement web backend PHP</option>
                                     <option value="Développement mobile">Développement mobile</option>
                                 </select>
                                 <!-- <input id="formation" type="text" class="form-control @error('filiere') is-invalid @enderror" name="formation" value="{{ old('filiere') }}" required autocomplete="formation" autofocus> -->

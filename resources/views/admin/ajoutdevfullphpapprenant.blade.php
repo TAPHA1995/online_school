@@ -31,14 +31,14 @@
         <a href="" class="simple-text logo-mini">
         
         </a>
-        <a href="home" class="simple-text logo-normal">
+        <a href="welcome" class="simple-text logo-normal">
           G-SCHOOL
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="home">
+            <a href="homeDeveloppement_web_frontend_PHP">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -121,9 +121,8 @@
              <p class="text">{{$row->consigne}} </p>
         </div>
         <div class="video">
-            <video controls width="700" height="300" >
-            <source src="/upload/{{$row->video}}" type="">
-            </video>
+            <iframe width="693" height="315" src="{{$row->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen controls>
+            </iframe> 
         </div>
         <div class="validationcours">
             <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark">Valider le cours</a>
@@ -131,8 +130,8 @@
         </div>
         <div class="testvalidation">
             <p class="text">{{$row->sujetvm}}</p>
-            <a href="{{$row->lienvm}}" class="" style="color:red; font-size:30px;">Lien</a><br>
-            <img src="images/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
+            <a href="{{$row->lienvm}}" class="" style="color:red; font-size:30px;" target="blank">Lien</a><br>
+            <img src="imagesepreuve/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
         </div>
         <div clss="envoiteste">
             <span>

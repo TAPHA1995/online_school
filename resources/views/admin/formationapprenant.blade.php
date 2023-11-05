@@ -1,6 +1,10 @@
 <!-- @extends('layouts.app') -->
 
 <!-- @section('content') -->
+@namespace App\Http\Middleware;
+
+@use Closure;
+@use Illuminate\Support\Facades\Auth;
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,14 +37,14 @@
         <a href="" class="simple-text logo-mini">
         
         </a>
-        <a href="home" class="simple-text logo-normal">
+        <a href="welcome" class="simple-text logo-normal">
           G-SCHOOL
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li>
-            <a href="home">
+            <a href="homeDeveloppement_web_frontend_PHP">
               <i class="now-ui-icons design_app"></i>
               <p>Dashboard</p>
             </a>
@@ -120,43 +124,51 @@
     </div>
 </div>
 <br><br>
-
 <br>
 <div class="lesformation">
-<div>
-    <a href="/index_uapprenant" class="Package">
-        <div class=" formation">Dévelopement web  fullstack php</div>
-    </a>
-    
-</div>  
-<div>
+@if(Auth::user()->formation == 'Développement web fullstack PHP')
+  <div>
+      <a href="/index_uapprenant" class="Package">
+          <div class=" formation">Dévelopement web  fullstack php</div>
+      </a> 
+  </div>
+  @endif
+  @if(Auth::user()->formation == 'Développement web frontend PHP')
+  <div>
     <a href="" class="Package">
-        <div class=" formation">Développement web frontend  php</div>
+        <div class=" formation">Développement web frontend PHP</div>
     </a>
-   
-</div> 
+</div>
+@endif 
+@if(Auth::user()->formation == 'Développement web backend PHP')
 <div>
     <a href="" class="Package">
         <div class=" formation">Développement web backend  php</div>
     </a>
-    
-</div>
+</div> 
+@endif
+
+@if(Auth::user()->formation == 'Développement mobile')
+
 <div>
     <a href="" class="Package">
         <div class=" formation">Développement mobile</div>
     </a>
     
 </div>
+@endif
 </div>
+ 
+
 <style>
     .lesformation{
-         display:flex;
-        justify-content:center;
+        display:flex;
+        justify-content:left;
         align-items:center;
         flex-direction:row;
         flex-wrap:wrap;
         gap:10px;
-        margin-left:40px;
+        margin-left:400px;
     }
     .formation{
         display:flex;
@@ -168,6 +180,10 @@
        color:white;
        align-items:center;
        text-align:center;
+       box-shadow: -1px 9px 40px -12px rgba(0,0,0,1.75);
+      -moz-box-shadow:-1px 9px 40px -12px rgba(0,0,0, 1.75);
+      -webkit-box-shadow:-1px 9px 40px -12px rgba(0,0,0,1.75);
+
       
     }
     a:hover{

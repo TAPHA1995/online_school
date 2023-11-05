@@ -37,10 +37,9 @@
                         <th>Editer</th>
                         <th>Supprimer</th>
                     </tr>
-
                   @foreach($users as $aprenant)
                     <tr>
-                        <td><img style="width:50px" src="/images/{{$aprenant->photo}}" alt=""></td>
+                        <td><img style="width:50px" src="/imagesapprenants/{{$aprenant->photo}}" alt=""></td>
                         <td>{{$aprenant->nom}}</td>
                         <td>{{$aprenant->prenom}}</td>
                         <td>{{$aprenant->email}}</td>

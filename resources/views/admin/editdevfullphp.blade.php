@@ -38,7 +38,7 @@
                             <label for="video" class="col-md-4 col-form-label text-md-right">{{ __('Video') }}</label>
 
                             <div class="col-md-6">
-                                <input id="video" type="file" class="form-control @error('video') is-invalid @enderror" name="video" value="{{$formation_devfullphps->video }}" required autocomplete="video" autofocus>
+                                <input id="video" type="text" class="form-control @error('video') is-invalid @enderror" name="video" value="{{$formation_devfullphps->video }}" required autocomplete="video" autofocus>
                                 <p>
                                     @if($errors->has('video'))
                                     {{$errors->first('video')}}

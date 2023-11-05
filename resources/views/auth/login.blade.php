@@ -35,7 +35,7 @@
           
             <ul class="navbar-nav">
             <li class="home">
-                    <a href="/home">G-SCHOOL</a>
+                    <a href="/welcome">G-SCHOOL</a>
                 </li>
                 <style>
                     .home{

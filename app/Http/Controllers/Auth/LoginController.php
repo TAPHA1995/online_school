@@ -33,10 +33,9 @@ class LoginController extends Controller
     {
         return 'dashboard'; 
        
-    }elseif(Auth::user()->formation == 'Développement web backend')
-     {
-        return '/home';
-    }
+    }else{
+        return 'homeDeveloppement_web_frontend_PHP';
+    }  
   }
     /**
      * Create a new controller instance.

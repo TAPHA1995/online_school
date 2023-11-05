@@ -11,16 +11,27 @@ use App\User;
 |
 */
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
 
  Auth::routes();
- Route::get('/home', 'HomeController@index')->name('home');
- Route::get('/dashboard', function () {
-        return view('admin.dashboard');
+ // affichage de la page accueil devfullphp fullstack
+ Route::get('/homeDeveloppement_web_frontend_PHP', 'HomeController@indexa')->name('homeDeveloppement_web_frontend_PHP');
+Route::get('/dashboard', function () {
+    return view('admin.dashboard');
+});
+
+ // affichage de la page accueil devfullphp fullstack
+ Route::get('/logout', 'Admin\DashdoardController@logoutaction');
+
+
+// affichage de la page devfullphp fullstack
+ Route::get('/homeDeveloppement_web_frontend_PHP', function () {
+        return view('layouts.homeDeveloppement_web_frontend_PHP');
     });
+   
      Route::group(['middleware' => ['auth','admin']], function(){
      Route::get('/role_apprenant', 'Admin\DashdoardController@lesaprenants');
      Route::delete('/role_delete/{id}', 'Admin\DashdoardController@registerdelete');
@@ -77,3 +88,5 @@ Route::get('/role_devwebfullapprenant', 'Admin\DashdoardController@role_devwebfu
 
 // affichage de la page des cours pour Développement web fullstackphp chez apprenant
 Route::get('/index_uapprenant',[App\Http\Controllers\Admin\DashdoardController::class,'indexaprenantshow']);
+
+// Route::get('/role_devfront', 'Admin\DashdoardController@role_devwebfullaprenatshow');

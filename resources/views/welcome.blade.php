@@ -31,7 +31,7 @@
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
           </button>
-          <a href="home">G-SCHOOL</a>
+          <a href="/welcome">G-SCHOOL</a>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
           
             <ul class="navbar-nav">
@@ -69,7 +69,7 @@
                 @if (Route::has('login'))
                     <div class="top-right links">
                         @auth
-                            <a href="{{ url('/home') }}">Home</a>
+                            <a href="{{ url('/homeDeveloppement_web_frontend_PHP') }}">DASHBOARD</a>
                         @else
                             <a href="{{ route('login') }}">Login</a>
 

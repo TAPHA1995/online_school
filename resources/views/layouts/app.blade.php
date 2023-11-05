@@ -105,18 +105,12 @@
                                         <a class="btn btn-info dropdown-item " href="/role_edit/{{ Auth::user()->id}}">
                                                     {{ __('Settign profile') }}
                                                 </a>
-                                                <a class="btn btn-info dropdown-item " href="{{ route('logout') }}"
-                                                    onclick="event.preventDefault();
-                                                                  document.getElementById('logout-form').submit();">
-                                                    {{ __('Logout') }}
+                                                <a class="btn btn-info dropdown-item " href="/logout">
+                                                    Logout
                                                 </a>
-
-                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                       @csrf
-                                   </form>
-                               </div>
-                            <!-- </div> -->
-                                
+                                    </div>
+                                    <!-- </div> -->
+                                        
                                          <style>
                                             .iconuser{
                                                     display:flex;
