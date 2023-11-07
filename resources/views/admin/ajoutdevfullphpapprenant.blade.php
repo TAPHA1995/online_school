@@ -32,7 +32,7 @@
         
         </a>
         <a href="welcome" class="simple-text logo-normal">
-          G-SCHOOL
+          SELF-LEARNING 
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
@@ -124,13 +124,24 @@
             <iframe width="693" height="315" src="{{$row->video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen controls>
             </iframe> 
         </div>
-        <div class="validationcours">
-            <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark">Valider le cours</a>
+        <div class="validationcours" >
+          
+              <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark" disabled>  
+              <div class="validationcountdown">
+                  <p> Valider le cours</p>
+                  <div class="countdownvc">
+                    <p id="days">00</p>
+                    <p id="hours">00</p>
+                    <p id="minutes">00</p>
+                    <p id="seconds">00</p> 
+                  </div>
+               </div>
+               </a>
             <a href="" class="btn btn-success text-light">Non validé</a>
         </div>
         <div class="testvalidation">
             <p class="text">{{$row->sujetvm}}</p>
-            <a href="{{$row->lienvm}}" class="" style="color:red; font-size:30px;" target="blank">Lien</a><br>
+            <a href="{{$row->lienvm}}" target="blank" class="" style="color:red; font-size:30px;" target="blank">Lien</a><br>
             <img src="imagesepreuve/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
         </div>
         <div clss="envoiteste">
@@ -141,9 +152,27 @@
         </div>
        
     </div>
+
+
     @endforeach
     </div>
   
+    <!-- <div class="countdown">
+                            <strong><p id="days">00</p></strong>
+                            <span class="days">Days</span>
+                        </div>
+                        <div class="countdown">
+                            <strong><p id="hours">00</p></strong>
+                            <span class="hours">Hours</span>
+                        </div>
+                        <div class="countdown">
+                            <strong><p id="minutes">00</p></strong>
+                            <span class="minutes">Minutes</span>
+                        </div>
+                        <div class="countdown">
+                            <strong><p id="seconds">00</p></strong>
+                            <span class="minutes">Seconds</span>
+                        </div> -->
 </body>
 </html>
 <style>
@@ -183,8 +212,45 @@ gap:100px;
         justify-content:center;
         flex-direction:column;
     }
+    .countdownvc{
+      display:flex;
+      width:100px;
+      gap:20px;
+      line-height:-20px;
+      color:white;
+      font-size:20px;
+      /* margin-left:80px; */
+        /* line-height:20px; */
 
+
+    }
+.validationcountdown{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        flex-direction:column;
+}
    
 
 </style>
+
+
+
+<script>
+    var countDownDate = new Date("Nov 12. 2023 00:00:00").getTime();
+    var x = setInterval(function(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60 ));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+    
+});
+</script>
 @endsection

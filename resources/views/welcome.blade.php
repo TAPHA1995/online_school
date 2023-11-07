@@ -31,7 +31,7 @@
                 <span class="navbar-toggler-bar bar2"></span>
                 <span class="navbar-toggler-bar bar3"></span>
           </button>
-          <a href="/welcome">G-SCHOOL</a>
+          <a href="/welcome">SELF-LEARNING </a>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
           
             <ul class="navbar-nav">
@@ -88,7 +88,7 @@
             <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                   WELCOME AT G-SCHOOL
+                   WELCOME AT SELF-LEARNING 
                 </div>
         <main class="py-4">
             @yield('content')

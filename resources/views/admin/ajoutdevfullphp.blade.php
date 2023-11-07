@@ -22,7 +22,10 @@
 </head>
 <body>
     <br>
+
+  
     <div class="ajoutfromation">
+    <p class="devfullphp text-primary  " >Développement web fullstack PHP</p>
     <a href="/affiche_formationdevfullphp" class="btn btn-primary ">Ajouter une formation</a>
 </div>
 <div class="containercours bg">
@@ -40,12 +43,12 @@
         </iframe> 
         </div>
         <div class="validationcours">
-            <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark">Valider le cours</a>
-            <a href="" class="btn btn-success text-light">Non validé</a>
+            <a href="{{$row->lienvc}}" class="btn bg-primary  text-dark">Les cours validés</a>
+            <a href="" class="btn btn-success text-light">Les cours non validés</a>
         </div>
         <div class="testvalidation">
             <p class="text">{{$row->sujetvm}}</p>
-            <a href="{{$row->lienvm}}" class="" style="color:red; font-size:30px;">Lien</a><br>
+            <a href="{{$row->lienvm}}" class=""  target="blank"style="color:red; font-size:30px;">Lien</a><br>
             <img src="imagesepreuve/{{$row->imagevm}}" style="width:520px; height:50vh; "alt="">
         </div>
         <div clss="envoiteste">
@@ -60,11 +63,9 @@
              </form>
              </span>
         </div>
-       
     </div>
     @endforeach
-    </div>
-  
+    </div>  
 </body>
 </html>
 <style>
@@ -72,7 +73,7 @@
 display:flex;
 justify-content:center;
 width:100%;
-overflow-y: scroll;
+/* overflow-y: scroll; */
 flex-wrap:wrap;
 gap:100px;
 
@@ -96,8 +97,13 @@ gap:100px;
 .ajoutfromation{
         display:flex;
         justify-content:right;
+        margin-top:20px;
     }
-
+    .ajoutfromation .devfullphp{
+       font-size:20px;
+       margin-right:140px;
+       
+    }
     .testvalidation {
         display:flex;
         justify-content:center;

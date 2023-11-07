@@ -38,7 +38,7 @@
         
         </a>
         <a href="welcome" class="simple-text logo-normal">
-          G-SCHOOL
+          SELF-LEARNING 
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">

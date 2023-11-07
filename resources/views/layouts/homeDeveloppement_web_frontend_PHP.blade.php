@@ -25,16 +25,14 @@
 </head>
 
 <body class="">
-  
   <div class="wrapper ">
     <div class="sidebar" data-color="orange"><!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"-->
       <div class="logo">
         <a href="" class="simple-text logo-mini">
-        
         </a>
         <a href="welcome" class="simple-text logo-normal">
-          G-SCHOOL
+          SELF-LEARNING 
         </a>
       </div>
       <div class="sidebar-wrapper" id="sidebar-wrapper">
